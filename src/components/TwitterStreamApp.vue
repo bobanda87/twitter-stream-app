@@ -18,7 +18,7 @@
             <tr class="tweet" v-for="(tweet, index) in tweets" :key="index">
               <th scope="row">
                 <span><img :src="tweet.profileImage" :alt="tweet.userName"/></span>
-                <span>{{ tweet.userName }}</span>
+                <div>{{ tweet.userName }}</div>
               </th>
               <td class="align-middle">
                 <span>{{ tweet.text }}</span>
