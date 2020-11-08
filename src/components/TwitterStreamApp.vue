@@ -15,7 +15,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="tweet" v-for="tweet in tweets" v-bind:key="tweet">
+            <tr class="tweet" v-for="(tweet, index) in tweets" :key="index">
               <th scope="row">
                 <span><img :src="tweet.profileImage" :alt="tweet.userName"/></span>
                 <span>{{ tweet.userName }}</span>
@@ -61,9 +61,8 @@ export default {
     subscribe () {
       let pusher = new Pusher('c92eaf445c270f4c2e86', { cluster: 'eu' })
       pusher.subscribe('twitter-stream')
-      pusher.bind('tweets', data => {
-        console.log(data);
-        this.tweets.unshift(data);
+      pusher.bind('tweets', tweets => {
+        this.tweets.push(tweets.tweet);
       })
     }
   },
