@@ -1,4 +1,8 @@
-# twitter-stream-app
+# Twitter Stream App frontend
+
+This app is serving as a basic frontend for showing tweets to the end user.
+
+It doesn't save any data and it solely relies on a public Pusher channel which it listens.
 
 ## Project setup
 ```
@@ -15,10 +19,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
